@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Mrlgm/voir-react/issues"
   },
-  "homepage": "https://github.com/Mrlgm/voir-react#readme"
+  "homepage": "https://github.com/Mrlgm/voir-react#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
 }
