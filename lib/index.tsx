@@ -1,5 +1,6 @@
 import * as React from 'react';
-import * as ReactDom from 'react-dom';
+import * as ReactDOM from 'react-dom';
+import Button from './button';
 
-console.log(React)
-console.log(ReactDom)
+
+ReactDOM.render(<Button/>, document.querySelector('#root'));

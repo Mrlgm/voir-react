@@ -21,14 +21,5 @@ module.exports = {
                 loader: 'awesome-typescript-loader'
             }
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: "voir-react",
-            template: "index.html"
-        })
-    ],
-    performance : {
-        hints : false
     }
 }
