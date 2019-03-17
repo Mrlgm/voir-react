@@ -27,5 +27,8 @@ module.exports = {
             title: "voir-react",
             template: "index.html"
         })
-    ]
+    ],
+    performance : {
+        hints : false
+    }
 }
