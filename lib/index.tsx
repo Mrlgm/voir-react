@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './button';
+import Icon from './icon';
 
-
-ReactDOM.render(<Button/>, document.querySelector('#root'));
+//不是html
+ReactDOM.render(<Icon name="wechat"/>, document.querySelector('#root'));
