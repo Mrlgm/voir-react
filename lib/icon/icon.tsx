@@ -1,13 +1,10 @@
 import React from 'react';
-import mac from './mac.svg';
-import wangwang from './wangwang.svg'
+import './importAll'
 
 interface IconProps {
     name: string
 }
 
-console.log(mac)
-console.log(wangwang)
 
 const Icon: React.FunctionComponent<IconProps> = (props) => {
     return (
