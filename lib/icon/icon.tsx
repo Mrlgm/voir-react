@@ -4,8 +4,7 @@ import './icon.scss';
 
 interface IconProps {
     name: string;
-    onClick: () => void;
-
+    onClick:React.MouseEventHandler<SVGElement>
 }
 
 

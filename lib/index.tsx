@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Icon from './icon/icon';
 
-const fn = () => {
-    console.log('fn')
+const fn: React.MouseEventHandler = (e) => {
+    console.log(e);
+    console.log(e.currentTarget);
 };
 
 //不是html
