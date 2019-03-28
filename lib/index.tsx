@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Icon from './icon/icon';
+import Button from './button/button';
+import './style/index.scss';
 
 
 //不是html
-ReactDOM.render(<Icon name="wangwang" />, document.querySelector('#root'));
+ReactDOM.render(<Button>你好</Button>, document.querySelector('#root'));
