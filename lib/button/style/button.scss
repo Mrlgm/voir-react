@@ -1,7 +1,6 @@
-@import "../../style/mixins/reset";
-@import "../../style/core/iconfont";
+@import "../../style/index";
 
-@mixin component-button {
+.vi-button {
   padding: 10px 20px;
   border-radius: 4px;
   outline: none;
@@ -15,11 +14,6 @@
     color: blue;
     border: 1px solid blue;
   }
-}
-
-.vi-button {
-  @extend %reset-component;
-  @include component-button;
 }
 
 

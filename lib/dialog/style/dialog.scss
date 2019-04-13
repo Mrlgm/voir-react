@@ -1,7 +1,6 @@
-@import "../../style/mixins/reset";
-@import "../../style/themes/default";
+@import "../../style/index";
 
-@mixin component-dialog {
+.vi-dialog {
   position: fixed;
   width: 15em;
   border-radius: 4px;
@@ -51,10 +50,5 @@
     align-items: center;
     color: white;
   }
-}
-
-.vi-dialog {
-  @extend %reset-component;
-  @include component-dialog;
 }
 
