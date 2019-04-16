@@ -1,4 +1,4 @@
-import React, {Fragment, MouseEventHandler, ReactElement, ReactFragment, ReactNode} from 'react';
+import React, {Fragment, MouseEventHandler, ReactElement, ReactNode} from 'react';
 import ReactDOM from 'react-dom';
 import './style/dialog.scss';
 import createScopedClass from '../classes';
@@ -23,7 +23,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         }
     };
 
-    const x = props.visible ?
+    const dialog = props.visible ?
         <Fragment>
             <div className={scopedClass('mask')} onClick={onClickMask}>
 
@@ -48,14 +48,16 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
             </div>
         </Fragment> :
         null;
-    return ReactDOM.createPortal(x, document.body);
+    return ReactDOM.createPortal(dialog, document.body);
 };
 
 Dialog.defaultProps = {
     closeOnClickMask: false
 };
 
-const alert = (content: string) => {
+//element只能是标签node可以是其他的
+
+const modal = (content: string | ReactNode, buttons?: Array<ReactElement>) => {
     const onClose = () => {
         ReactDOM.render(React.cloneElement(component, {visible: false}), div);
         //删除div 使用react的方法，先卸载
@@ -64,7 +66,7 @@ const alert = (content: string) => {
     };
     const component =
         <Dialog
-            buttons={[<button onClick={onClose}>OK</button>]}
+            buttons={buttons}
             visible={true}
             onClose={onClose}>
             {content}
@@ -72,55 +74,29 @@ const alert = (content: string) => {
     const div = document.createElement('div');
     document.body.appendChild(div);
     ReactDOM.render(component, div);
+
+    return onClose;
+};
+
+const alert = (content: string) => {
+    const buttons = [<button onClick={() => {onClose();}}>OK</button>];
+    const onClose = modal(content, buttons);
 };
 
 const confirm = (content: string, yes?: () => void, no?: () => void) => {
     const onYes = () => {
-        ReactDOM.render(React.cloneElement(component, {visible: false}), div);
-        //删除div 使用react的方法，先卸载
-        ReactDOM.unmountComponentAtNode(div);
-        div.remove();
+        onClose();
         yes && yes();
     };
     const onNo = () => {
-        ReactDOM.render(React.cloneElement(component, {visible: false}), div);
-        //删除div 使用react的方法，先卸载
-        ReactDOM.unmountComponentAtNode(div);
-        div.remove();
+        onClose();
         no && no();
     };
-    const component = (
-        <Dialog
-            buttons={[
-                <button onClick={onNo}>no</button>,
-                <button onClick={onYes}>yes</button>
-            ]}
-            visible={true}
-            onClose={onNo}>
-            {content}
-        </Dialog>
-    );
-    const div = document.createElement('div');
-    document.body.appendChild(div);
-    ReactDOM.render(component, div);
-};
-
-//element只能是标签node可以是其他的
-const modal = (content: ReactNode | ReactFragment) => {
-    const onClose = () => {
-        ReactDOM.render(React.cloneElement(component, {visible: false}), div);
-        //删除div 使用react的方法，先卸载
-        ReactDOM.unmountComponentAtNode(div);
-        div.remove();
-    };
-    const component = <Dialog onClose={onClose} visible={true}>
-        {content}
-    </Dialog>;
-    const div = document.createElement('div');
-    document.body.appendChild(div);
-    ReactDOM.render(component, div);
-
-    return onClose;
+    const buttons = [
+        <button onClick={onNo}>no</button>,
+        <button onClick={onYes}>yes</button>
+    ];
+    const onClose = modal(content, buttons);
 };
 
 export {alert, confirm, modal};
