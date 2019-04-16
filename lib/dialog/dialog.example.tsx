@@ -1,8 +1,15 @@
 import React, {useState} from 'react';
-import Dialog, {alert} from './dialog';
+import Dialog, {alert, confirm, modal} from './dialog';
 
 export default function () {
     const [visible, setVisible] = useState(false);
+    const openModal = () => {
+        const close = modal(<h1>你好
+            <button onClick={() => {close();}}>
+                close
+            </button>
+        </h1>);
+    };
     return (<div>
         <button onClick={() => {setVisible(!visible);}}>click</button>
         <Dialog visible={visible} buttons={
@@ -13,6 +20,14 @@ export default function () {
         } onClose={() => {setVisible(false);}}>hi</Dialog>
         <div>
             <button onClick={e => alert('hhh')}>hhh</button>
+            <button onClick={e => confirm('hhh', () => {
+                window.alert('yes');
+            }, () => {
+                window.alert('no');
+            })}>
+                confirm
+            </button>
+            <button onClick={openModal}>modal</button>
         </div>
     </div>);
 }
