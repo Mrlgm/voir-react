@@ -1,12 +1,2 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import DialogExample from './dialog/dialog.example';
-
-
-//不是html
-ReactDOM.render(<DialogExample/>, document.querySelector('#root'));
-
-
-
-
 export {default as Icon} from './icon/icon';
+export {default as Dialog} from './dialog/dialog';
