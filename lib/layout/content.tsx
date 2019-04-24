@@ -1,10 +1,17 @@
 import React from 'react';
 import createScopedClass from '../classes';
+import classNames from '../helpers/classnames';
+
+interface Props extends React.HTMLAttributes<HTMLElement> {
+}
 
 const sc = createScopedClass('vi-content');
-const Content: React.FunctionComponent = () => {
+const Content: React.FunctionComponent<Props> = (props) => {
+    const {className, ...rest} = props;
     return (
-        <div className={sc()}>content</div>
+        <div className={classNames(sc(), className)} {...rest}>
+            {props.children}
+        </div>
     );
 };
 

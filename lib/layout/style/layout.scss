@@ -1,5 +1,25 @@
 @import "../../style/index";
 
-.vi-layout{
+.vi-layout {
   border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+
+  &.hasAside {
+    flex-direction: row;
+
+    .vi-layout {
+      flex-direction: column;
+    }
+  }
+
+  .vi-content {
+    flex-grow: 1;
+    border: 1px solid green;
+  }
+
+  & & {
+    flex-grow: 1;
+    flex-direction: row;
+  }
 }
