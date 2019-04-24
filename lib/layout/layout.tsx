@@ -18,8 +18,10 @@ const Layout: React.FunctionComponent<Props> = (props) => {
         return result || node.type === Aside;
     }, false);
 
+    const hasAsideClass = hasAside ? 'hasAside' : '';
+
     return (
-        <div className={classNames(sc(), [className, hasAside && 'hasAside'].join(' '))} {...rest}>
+        <div className={classNames(sc(), className, hasAsideClass)} {...rest}>
             {props.children}
         </div>
     );
