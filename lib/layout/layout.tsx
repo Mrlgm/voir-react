@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import createScopedClass from '../classes';
+import {createScopedClass} from '../helpers/classnames';
 import classNames from '../helpers/classnames';
 import './style/layout.scss';
 import Aside from './aside';

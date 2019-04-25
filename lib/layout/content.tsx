@@ -1,5 +1,5 @@
 import React from 'react';
-import createScopedClass from '../classes';
+import {createScopedClass} from '../helpers/classnames';
 import classNames from '../helpers/classnames';
 
 interface Props extends React.HTMLAttributes<HTMLElement> {

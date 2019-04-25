@@ -1,7 +1,7 @@
 import React, {Fragment, MouseEventHandler, ReactElement, ReactNode} from 'react';
 import ReactDOM from 'react-dom';
 import './style/dialog.scss';
-import createScopedClass from '../classes';
+import {createScopedClass} from '../helpers/classnames';
 
 interface Props {
     visible: boolean;
