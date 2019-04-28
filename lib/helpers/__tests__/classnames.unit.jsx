@@ -1,4 +1,4 @@
-import classNames from '../classnames'
+import classNames, {createScopedClass} from '../classnames'
 
 describe('classNames', () => {
     it('接受一个 classNames', () => {
@@ -25,4 +25,14 @@ describe('classNames', () => {
         const result = classNames()
         expect(result).toEqual('')
     })
+})
+
+describe('createScopedClass', () => {
+    it('接受字符串或对象', () => {
+        const sc = createScopedClass('vi-layout')
+        expect(sc()).toEqual('vi-layout')
+        expect(sc('x')).toEqual('vi-layout-x')
+        expect(sc({y: true, z: false})).toEqual('vi-layout-y')
+        expect(sc({y: true, z: true})).toEqual('vi-layout-y vi-layout-z')
+    });
 })

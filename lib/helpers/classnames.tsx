@@ -15,9 +15,9 @@ function createScopedClass(prefix: string) {
         if (typeof name === 'string' || name === undefined) {
             result = [prefix, name].filter(Boolean).join('-');
         } else {
-            name2 = Object.entries(name).filter(kv => kv[1]).map(kv => kv[0]);
+            name2 = Object.entries(name).filter(kv => kv[1] !== false).map(kv => kv[0]);
             result = name2.map(name => {
-                [prefix, name].filter(Boolean).join('-');
+                return [prefix, name].filter(Boolean).join('-');
             }).join(' ');
         }
         return result;
