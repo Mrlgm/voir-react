@@ -5,11 +5,25 @@ import IconExample from './lib/icon/icon.example';
 import LayoutExample from './lib/layout/layout.example';
 
 function Example() {
-    return <div>
-        <IconExample/>
-        <DialogExample/>
-        <LayoutExample/>
-    </div>;
+    return (
+        <div>
+            <header>
+                <div className="logo">
+                    VI
+                </div>
+            </header>
+            <aside>
+                <h2>组件</h2>
+                <ul>
+                    <li>Icon</li>
+                    <li>Dialog</li>
+                </ul>
+            </aside>
+            <IconExample/>
+            <DialogExample/>
+            <LayoutExample/>
+        </div>
+    );
 }
 
 
