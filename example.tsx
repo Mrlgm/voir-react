@@ -12,15 +12,15 @@ const logo = require('./logo.png');
 function Example() {
     return (
         <Router>
-            <Layout className='page'>
-                <Header>
+            <Layout className="page">
+                <Header className="page-header">
                     <div className="logo">
-                        <img src={logo} alt=""/>
-                        VI
+                        <img src={logo} width='48' height='48' alt=""/>
+                        <span>VI</span>
                     </div>
                 </Header>
                 <Layout>
-                    <Aside>
+                    <Aside className="page-aside">
                         <h2>组件</h2>
                         <ul>
                             <li><Link to="/icon">Icon</Link></li>
@@ -28,13 +28,15 @@ function Example() {
                             <li><Link to="/layout">Layout</Link></li>
                         </ul>
                     </Aside>
-                    <Content>
+                    <Content className="page-main">
                         <Route path="/icon" component={IconExample}/>
                         <Route path="/dialog" component={DialogExample}/>
                         <Route path="/layout" component={LayoutExample}/>
                     </Content>
                 </Layout>
-                <Footer>footer</Footer>
+                <Footer className="page-footer">
+                    &copy; Mrlgm
+                </Footer>
             </Layout>
         </Router>
     );
