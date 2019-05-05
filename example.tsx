@@ -7,12 +7,15 @@ import IconExample from './lib/icon/icon.example';
 import LayoutExample from './lib/layout/layout.example';
 import {Layout, Aside, Content, Footer, Header} from './lib/layout/layout';
 
+const logo = require('./logo.png');
+
 function Example() {
     return (
         <Router>
             <Layout className='page'>
                 <Header>
                     <div className="logo">
+                        <img src={logo} alt=""/>
                         VI
                     </div>
                 </Header>
