@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html, body, #root {
+  height: 100vh;
+}
+
 ul, ol {
   list-style: none;
 }
@@ -23,11 +27,11 @@ $main-color: #B6D5E1;
 $border-color: #fff;
 
 .page {
-
+  height: 100%;
   background-color: #eeeeee;
 
   &-header {
-    background-color: #fff;
+    background-color: $border-color;
     padding: 8px $padding;
 
     .logo {
@@ -55,14 +59,37 @@ $border-color: #fff;
     }
 
     ul {
-      padding: 8px $padding;
+
       min-width: 12em;
 
       > li {
-        padding: 8px 0;
+
 
         a {
-          color: $main-color;
+          display: block;
+          padding: 8px $padding;
+          color: #333;
+
+          &:hover {
+            color: $main-color;
+          }
+
+          &.active {
+            background: $main-color;
+            color: #fff;
+            position: relative;
+
+            &::after {
+              display: block;
+              content: '';
+              width: 2px;
+              height: 100%;
+              position: absolute;
+              right: 0;
+              top: 0;
+              background-color: darken($main-color, 30%);;
+            }
+          }
         }
       }
     }
@@ -78,5 +105,7 @@ $border-color: #fff;
 
   &-main {
     padding: 16px 0;
+    height: calc(100vh - 114px);
+    overflow: auto;
   }
 }

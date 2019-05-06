@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './example.scss';
-import {HashRouter as Router, Link, Route} from 'react-router-dom';
+import {HashRouter as Router, NavLink, Route} from 'react-router-dom';
 import DialogExample from './lib/dialog/dialog.example';
 import IconExample from './lib/icon/icon.example';
 import LayoutExample from './lib/layout/layout.example';
@@ -23,9 +23,9 @@ function Example() {
                     <Aside className="page-aside">
                         <h2>组件</h2>
                         <ul>
-                            <li><Link to="/icon">Icon</Link></li>
-                            <li><Link to="/dialog">Dialog</Link></li>
-                            <li><Link to="/layout">Layout</Link></li>
+                            <li><NavLink to="/icon">Icon</NavLink></li>
+                            <li><NavLink to="/dialog">Dialog</NavLink></li>
+                            <li><NavLink to="/layout">Layout</NavLink></li>
                         </ul>
                     </Aside>
                     <Content className="page-main">
