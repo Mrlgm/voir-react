@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './example.scss';
 import {HashRouter as Router, NavLink, Route} from 'react-router-dom';
 import DialogExample from './lib/dialog/dialog.example';
-import IconExample from './lib/icon/icon.example';
 import LayoutExample from './lib/layout/layout.example';
 import {Layout, Aside, Content, Footer, Header} from './lib/layout/layout';
+import IconDemo from './lib/icon/icon.demo';
 
 const logo = require('./logo.png');
 
@@ -29,7 +29,7 @@ function Example() {
                         </ul>
                     </Aside>
                     <Content className="page-main">
-                        <Route path="/icon" component={IconExample}/>
+                        <Route path="/icon" component={IconDemo}/>
                         <Route path="/dialog" component={DialogExample}/>
                         <Route path="/layout" component={LayoutExample}/>
                     </Content>
