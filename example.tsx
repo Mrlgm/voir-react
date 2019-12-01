@@ -4,6 +4,7 @@ import './example.scss';
 import {HashRouter as Router, NavLink, Route} from 'react-router-dom';
 import DialogExample from './lib/dialog/dialog.example';
 import LayoutExample from './lib/layout/layout.example';
+import FormExample from './lib/form/form.example';
 import {Layout, Aside, Content, Footer, Header} from './lib/layout/layout';
 import IconDemo from './lib/icon/icon.demo';
 
@@ -26,12 +27,14 @@ function Example() {
                             <li><NavLink to="/icon">Icon</NavLink></li>
                             <li><NavLink to="/dialog">Dialog</NavLink></li>
                             <li><NavLink to="/layout">Layout</NavLink></li>
+                            <li><NavLink to="/form">Form</NavLink></li>
                         </ul>
                     </Aside>
                     <Content className="page-main">
                         <Route path="/icon" component={IconDemo}/>
                         <Route path="/dialog" component={DialogExample}/>
                         <Route path="/layout" component={LayoutExample}/>
+                        <Route path="/form" component={FormExample}/>
                     </Content>
                 </Layout>
                 <Footer className="page-footer">
