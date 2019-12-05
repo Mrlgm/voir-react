@@ -18,6 +18,10 @@ function isEmpty(value: any) {
     return value === undefined || value === null || value === '';
 }
 
+export function noErrors(errors: any) {
+    return Object.keys(errors).length === 0;
+}
+
 const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
     let errors: any = {};
     const addErrors = (key: string, message: string) => {
